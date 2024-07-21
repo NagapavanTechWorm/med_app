@@ -4,8 +4,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View, Modal, TextInput, Aler
 import { router } from 'expo-router';
 import slide1 from "../assets/slide1.png";
 import slide2 from "../assets/slide2.png";
-import slide3 from "../assets/slide3.png";
-import slide4 from "../assets/slide4.png";
+import slide4 from "../assets/slide3.png";
+import slide3 from "../assets/slide4.png";
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -20,9 +20,9 @@ export default function App() {
 
   const images = [slide1, slide2, slide4,slide3];
   const text = [
+    "Enter your whatsapp number",
     "Get your prescription from the doctor",
     "Upload the prescription",
-    "Enter your whatsapp number",
     "Get reminders"
   ];
 
@@ -45,7 +45,7 @@ export default function App() {
 
   const handleTouchEnd = (e) => {
     const endX = e.nativeEvent.pageX;
-    if (startX - endX > 50 && slide != 3) {
+    if (startX - endX > 50 && slide != 1) {
       next();
     } else if (endX - startX > 50) {
       prev();
@@ -114,7 +114,7 @@ export default function App() {
       onResponderRelease={handleTouchEnd}
       className="flex-col flex-1 items-center justify-center bg-[#03001C]">
       
-      <Image source={images[(slide-1)]} resizeMethod="contain" className={`h-64 ${slide==3?"w-64":"w-full"}`}/>
+      <Image source={images[(slide-1)]} resizeMethod="contain" className={`h-64 ${slide==1?"w-64":"w-full"}`}/>
       
       <Text className="text-white font-[popSemiBold] mx-2 mt-8 text-center text-3xl">{text[slide - 1]}</Text>
       
@@ -125,11 +125,11 @@ export default function App() {
         <View className={`w-3 h-3 rounded-full ${slide == 4 ? "bg-orange-500" : "bg-white"} ${slide == 3 ? "" : ""}`}/>
       </View>
       
-      <TouchableOpacity onPress={next} className={"px-7 py-2 bg-orange-400 rounded-full mt-10 " + (slide == 4 || slide == 3 ? "hidden" : "")}>
+      <TouchableOpacity onPress={next} className={"px-7 py-2 bg-orange-400 rounded-full mt-10 " + (slide == 1 || slide == 4 ? "hidden" : "")}>
         <Text className="text-white text-4xl">{">"}</Text>
       </TouchableOpacity>
 
-      <View className={`${slide == 3 ? "" : "hidden"} flex-col items-center text-center gap-5 w-full mt-2`}>
+      <View className={`${slide == 1 ? "" : "hidden"} flex-col items-center text-center gap-5 w-full mt-2`}>
         <TextInput
           className="border-2 rounded w-[80%] h-[50px] text-center text-xl font-semibold"
           style={styles.input}
@@ -185,6 +185,7 @@ export default function App() {
           </View>
         </View>
       </Modal>
+      <StatusBar backgroundColor='#161622' style='light' />
     </View>
   );
 }
