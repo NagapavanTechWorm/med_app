@@ -60,11 +60,11 @@ export const clearAllData = async () => {
 };
 
 
-// const OpenAI = require('openai');
-// import * as FileSystem from 'expo-file-system';
+const OpenAI = require('openai');
+import * as FileSystem from 'expo-file-system';
 
-// const apiKey = 'sk-proj-pq3ImYcGHN8EuqTSv5Y0T3BlbkFJ1PTGe8tI7BWiX4xWNhyn'; // Replace with your actual API key
-// const openai = new OpenAI({ apiKey });
+const apiKey = 'sk-proj-pq3ImYcGHN8EuqTSv5Y0T3BlbkFJ1PTGe8tI7BWiX4xWNhyn'; // Replace with your actual API key
+const openai = new OpenAI({ apiKey });
 
 // Function to encode an image file to base64 format
 export async function encodeImage(imagePath) {
