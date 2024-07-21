@@ -107,19 +107,26 @@ const Card = ({ data, handleDelete, handleEdit }) => {
   const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
   return (
-    <View style={{ backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', margin: 10, padding: 10, borderRadius: 5, borderWidth: 2, borderColor: 'orange' }}>
-      <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
-        <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold', marginBottom: 5 }}>{name}</Text>
-        <Text style={{ color: 'black', fontSize: 14, width: 220 }}>{description}</Text>
-        <View className="flex mb-4 w-full pl-10 gap-4" style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginTop: 5 }}>
+    <View className="bg-white flex flex-row justify-between items-center m-2 p-2 rounded border-2 border-orange-500">
+      <View className="flex-1 flex flex-col justify-center items-start">
+        <Text className="text-black text-xl font-bold mb-1">{name}</Text>
+        <Text className="text-black text-sm w-56" >{description}</Text>
+        <View className=" mb-4 w-full gap-2 flex flex-row items-center justify-between mt-1">
+          <View className="flex flex-row justify-center items-center gap-1">
           {notificationTimeArray.map((timeSlot, index) => (
-            <TouchableOpacity key={index} onPress={() => showTimePicker(index)}>
-              <Text className="h-10 pt-3" style={{ color: 'black', fontSize: 12, borderWidth: 2, borderColor: 'orange', borderRadius: 5, width: 70, textAlign: 'center', padding: 5 }}>{timeSlot}</Text>
+            <TouchableOpacity  key={index} onPress={() => showTimePicker(index)}>
+              <View className="h-10 border-2 border-orange-500 rounded w-[75px] text-center flex justify-center items-center p-1">
+                <Text className="text-black text-xs " >{timeSlot}</Text>
+              </View>
             </TouchableOpacity>
           ))}
+          </View>
+        <TouchableOpacity onPress={() => handleDelete(name)}>
+            <AntDesign name="delete" size={20} color="red" />
+      </TouchableOpacity>
         </View>
 
-        <View className="flex self-center flex-row gap-3">
+        <View className="flex self-center flex-row gap-2">
           {daysOfWeek.map((dayLabel, index) => (
             <TouchableOpacity key={index} onPress={() => handleDayToggle(index)}>
               <View className={`w-8 h-8 rounded-full flex justify-center items-center ${selectedDays.includes(index) ? 'bg-orange-600' : 'bg-orange-300'}`}>
@@ -130,9 +137,6 @@ const Card = ({ data, handleDelete, handleEdit }) => {
         </View>
       
       </View>
-      <TouchableOpacity onPress={() => handleDelete(name)}>
-        <AntDesign name="delete" size={20} color="red" />
-      </TouchableOpacity>
       <DateTimePickerModal
         isVisible={isTimePickerVisible}
         mode="time"
