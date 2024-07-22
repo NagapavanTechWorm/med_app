@@ -56,5 +56,16 @@ const openai = new OpenAI({ apiKey });
 -> Start the backend server:
 - npm install
 - npm start
-  
+
+
+-> Demo
+
+ Images
+
+https://github.com/user-attachments/assets/de727eaf-7114-418c-b2fd-a97251129393
+https://github.com/user-attachments/assets/ea06d677-4e44-4b5e-b04a-b04404810f87
+https://github.com/user-attachments/assets/d5b455b1-bdfb-483b-8e64-bf5020f06071
+
+Video
+
 
