@@ -60,11 +60,7 @@ export const clearAllData = async () => {
 };
 
 
-const OpenAI = require('openai');
-import * as FileSystem from 'expo-file-system';
 
-const apiKey = 'sk-proj-pq3ImYcGHN8EuqTSv5Y0T3BlbkFJ1PTGe8tI7BWiX4xWNhyn'; // Replace with your actual API key
-const openai = new OpenAI({ apiKey });
 
 // Function to encode an image file to base64 format
 export async function encodeImage(imagePath) {
@@ -137,7 +133,7 @@ export async function scheduleCronJob() {
     cron_data.number = await getData("mobile")
 
     // Make POST request to your local server
-    const url = 'http://192.168.11.87:3001/schedule';
+    const url = 'http://192.168.188.124:3001/schedule';
     const options = {
       method: 'POST',
       headers: {
