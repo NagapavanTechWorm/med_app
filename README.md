@@ -23,8 +23,8 @@ Before you begin, ensure you have met the following requirements:
 
 -> Frontend Setup
 
-1. Clone the repository:
-   git clone https://github.com/your-username/ai-med-reminder.git
+1. Fork or Clone the repository:
+   git clone https://github.com/NagapavanTechWorm/med_app.git
 
 2. Navigate to the project directory:
 - cd ai-med-reminder
