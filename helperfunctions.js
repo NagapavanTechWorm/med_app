@@ -60,7 +60,7 @@ export const clearAllData = async () => {
 };
 
 
-
+//add the code in readme here...
 
 // Function to encode an image file to base64 format
 export async function encodeImage(imagePath) {

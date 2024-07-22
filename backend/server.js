@@ -1,8 +1,8 @@
 const express = require('express');
 const cron = require('node-cron');
-const accountSid = 'ACf517c75e96ff8e5483ae20c43eda6ee9';
-const authToken = 'd6496f0689be757af9949e27acb889b4';
-const client = require('twilio')(accountSid, authToken);
+const accountSid = ' '; //add accountSid
+const authToken = '';  //add authtoken
+ const client = require('twilio')(accountSid, authToken);
 
 const app = express();
 app.use(express.json());
