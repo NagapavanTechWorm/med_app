@@ -10,7 +10,7 @@ The app allows users to upload prescriptions, recognize text using OpenAI, and s
 -AI Integration:** Use OpenAI to recognize text from uploaded prescriptions.
 -WhatsApp Notifications:** Send reminders to WhatsApp using Twilio.
 
-->Prerequisites
+-> Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
@@ -18,6 +18,9 @@ Before you begin, ensure you have met the following requirements:
 - You have installed [Expo CLI](https://docs.expo.dev/get-started/installation/)
 - You have signed up for [OpenAI API](https://beta.openai.com/signup/) and obtained an API key
 - You have signed up for [Twilio](https://www.twilio.com/try-twilio) and obtained an API key
+
+
+
 
 -> Installation
 
@@ -31,9 +34,13 @@ Before you begin, ensure you have met the following requirements:
 - npm install
 - npm start
 
+
+
 -> Backend Setup
--cd backend
--npm install
+- cd backend
+- npm install
+
+
 
 
 -> In helperfunction.js, add the following code at line 63:
@@ -44,7 +51,10 @@ import * as FileSystem from 'expo-file-system';
 const apiKey = '#######'; // Replace with your actual API key
 const openai = new OpenAI({ apiKey });
 
+
+
 -> Start the backend server:
--npm install
--npm start
+- npm install
+- npm start
+  
 
