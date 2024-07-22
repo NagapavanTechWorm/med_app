@@ -45,6 +45,6 @@ const apiKey = '#######'; // Replace with your actual API key
 const openai = new OpenAI({ apiKey });
 
 -> Start the backend server:
-npm install
-npm start
+-npm install
+-npm start
 
